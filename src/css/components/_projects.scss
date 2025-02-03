@@ -1,0 +1,187 @@
+.projects {
+    // background: var(--off-black);
+    background: var(--white);
+    display:block;
+    position:relative;
+}
+
+.projects--other {
+    padding-top: var(--baseline-xxlarge);
+}
+
+.projects__container {
+    @include col;
+    @include column(12);
+}
+
+.projects__list {
+    @include row;
+    // display:block;
+    padding-bottom: var(--baseline-large);
+    margin-top: -24px;
+    position:relative;
+}
+
+.projects__list-item {
+    @include col;
+    @include column(12);
+    -webkit-animation: slide-in-bottom 300ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-bottom 300ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    display:inline-block;
+    margin-bottom: var(--gutter);
+    max-width:none;
+    vertical-align:top;
+    // @media(min-width: 768px) {
+    //     @include column(6);
+    // }
+    &:nth-of-type(1) {
+        animation-delay: 0.3s;
+        .projects__list-item-year {
+            animation-delay: 0.5s;
+        }
+        .projects__list-item-title {
+            animation-delay: 0.6s;
+        }
+    }
+    &:nth-of-type(2) {
+        animation-delay: 0.5s;
+        .projects__list-item-year {
+            animation-delay: 0.7s;
+        }
+        .projects__list-item-title {
+            animation-delay: 0.8s;
+        }
+    }
+    &:nth-of-type(3) {
+        animation-delay: 0.7s;
+        .projects__list-item-year {
+            animation-delay: 0.9s;
+        }
+        .projects__list-item-title {
+            animation-delay: 1s;
+        }
+    }
+
+}
+
+.projects__list-item-title {
+    @include font-size-plus-2;
+    -webkit-animation: slide-in-left 300ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-left 300ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    justify-content:center;
+    display:flex;
+    flex-direction:column;
+    // margin-bottom: var(--baseline);
+    // margin-top: var(--baseline);
+    // font-weight:  var(--medium-weight);
+}
+
+.projects__list-item-year {
+    @include font-size-baseline;
+    -webkit-animation: slide-in-left 300ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-in-left 300ms cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    color: var(--mid-grey-3);
+    display:block;
+    position:relative;
+    transition: all 0.15s ease-in-out;
+}
+
+.projects__list-item-trigger {
+    @include box-shadow-2;
+    align-items:stretch;
+    // background: var(--dark-grey-3);
+    background: var(--white);
+    border-radius: 14px;
+    border: 1px solid hsl(0,0,95%);
+    // box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
+    // box-shadow: 0 2px 10px rgba(0 0 0 0.2);
+    // color: var(--white);
+    color: var(--off-black);
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    letter-spacing: -0.04rem;
+    overflow:hidden;
+    padding: var(--baseline) var(--baseline) var(--baseline) var(--baseline); 
+    position:relative;
+    text-align:left;
+    text-decoration:none;
+    transition: all 0.15s ease-in-out;
+    width:100%;
+    svg {
+        align-self:center;
+        // fill: var(--white);
+        fill: var(--dark-grey-2);
+        transition: transform 0.2s ease;
+    }
+    .tip {
+        align-self:center;
+        align-items:center;
+        display:flex;
+        flex-direction:row;
+        z-index: 1;
+        svg {
+            fill: var(--mid-grey-3);
+        }
+        span {
+            @include font-size-minus-1;
+            color: var(--mid-grey-2);
+            margin-left: var(--baseline-xsmall);
+            opacity:0;
+            margin-right:-100px;
+            transition: all 0.4s ease;
+            transform:translateY(2px);
+        }
+    }
+    &:not(.locked) {
+        &:hover {
+            @include box-shadow-2--hover;
+            -webkit-animation: BouncingProjectLink 0.4s ease 1;
+            background: var(--dark-grey-2);
+            background: var(--white);
+            transform: translateY(-3px);
+            .projects__list-item-year {
+                // color: var(--white);
+            }
+            svg {
+                transform: translateX(3px);
+            }
+        }
+    }
+    &.locked {
+        .projects__list-item-title {
+            color: var(--mid-grey-2);
+            .projects__list-item-year {
+                color: var(--mid-grey-2);
+            }
+        }
+        pointer-events:initial;
+        &:before {
+            background: var(--white);
+            bottom: 0;
+            content:'';
+            left: 0;
+            opacity: 0.7;
+            position:absolute;
+            right:0;
+            top:0;
+            z-index: 0;
+        }
+        &:hover {
+            .tip {
+                span {
+                    margin-right:0;
+                    opacity:1;
+                }
+            }
+        }
+    }
+}
+
+//Modifier for using this block at bottom of project page. 
+.projects--extra {
+    padding-top: var(--baseline-xlarge);
+    .projects__list {
+        margin-top: 0;
+    }
+}

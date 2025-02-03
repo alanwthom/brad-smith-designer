@@ -1,0 +1,51 @@
+.nav {
+    display:flex;
+    height:30px;
+    flex-direction:row;
+    justify-content:space-between;
+    position:relative;
+}
+
+.nav__item {
+    background:none;
+    // color: var(--light-grey-2);
+    color: var(--off-black);
+    display:inline-block;
+    margin-right: var(--baseline-medium);
+    position:relative;
+    transition: all .15s cubic-bezier(.25,.46,.45,.94);
+    span {
+        display:inline;
+        padding-bottom: 0; 
+    }
+    &:last-of-type {
+        margin-right:0;
+    }
+    // &:before {
+    //     background: var(--white);
+    //     bottom: 1px;
+    //     content: "";
+    //     height: 1px;
+    //     left: 0;
+    //     opacity: 0.5;
+    //     position: absolute;
+    //     right: 0;
+    //     // transition: all .15s cubic-bezier(.25,.46,.45,.94);
+    //     transition: all .15s ease-in-out;
+    // }
+    &:hover {
+        // color: var(--white);
+        color: var(--black);
+        span {
+            // border-bottom: 1px solid var(--white);
+            border-bottom: 1px solid var(--black);
+            padding-bottom: 3px;
+            -webkit-animation: BouncingTextLink 0.3s ease 1;
+        }
+    }
+    &:active {
+        &:before {
+            padding-bottom: 1px;
+        }
+    }
+}
