@@ -23,22 +23,22 @@
     --gutter: 24px;
     --max-container-width: 1200px;
     
-    --white: hsl(0, 0%, 100%);
-    --light-grey-1: hsl(0, 0%, 96%);
-    --light-grey-2: hsl(0, 0%, 90%);
-    --light-grey-3: hsl(0, 0%, 80%);
-    --mid-grey-1: hsl(0, 0%, 70%);
-    --mid-grey-2: hsl(0, 0%, 60%);
-    --mid-grey-3: hsl(0, 0%, 50%);
-    --dark-grey-1: hsl(0, 0%, 22%);
-    --dark-grey-2: hsl(0, 0%, 13%);
-    --dark-grey-3: hsl(0, 0%, 10.5%);
-    --off-black: hsl(0, 0%, 8%);
-    --black: hsl(0, 0%, 0%);
+    --white: rgb(0deg, 0%, 100%);
+    --light-grey-1: hsl(0deg, 0%, 96%);
+    --light-grey-2: hsl(0deg, 0%, 90%);
+    --light-grey-3: hsl(0deg, 0%, 80%);
+    --mid-grey-1: hsl(0deg, 0%, 70%);
+    --mid-grey-2: hsl(0deg, 0%, 60%);
+    --mid-grey-3: hsl(0deg, 0%, 50%);
+    --dark-grey-1: hsl(0deg, 0%, 22%);
+    --dark-grey-2: hsl(0deg, 0%, 13%);
+    --dark-grey-3: hsl(0deg, 0%, 10.5%);
+    --off-black: hsl(0deg, 0%, 8%);
+    --black: hsl(0deg, 0%, 0%);
 
     --link: #5000FF;
 
-    --brand: hsl(191,100%, 63%);
+    --brand: hsl(191deg,100%, 63%);
 
     --light-weight: 300;
     --regular-weight: 400;
